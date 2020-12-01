@@ -1,5 +1,4 @@
-import train
-#from train import X_test, y_test, test_df, model, history
+from train import X_test, y_test, test_df, model, history
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
@@ -57,12 +56,12 @@ def plot_loss_accuracy(history, save=True):
 
 
 if __name__ == '__main__':
-    model = load_model('./model/model.03-0.70.h5')
-    print("Loaded model from disk.")
+    # model = load_model('./model/model.03-0.70.h5')
+    #print("Loaded model from disk.")
 
-    y_pred = model.predict(train.X_test, verbose=1)
+    y_pred = train.model.predict(train.X_test, verbose=1)
     y_pred_decoded = [decode_label(pred) for pred in y_pred]
-    loss, score = model.evaluate(x=train.X_test, y=train.y_test)
+    loss, score = train.model.evaluate(x=train.X_test, y=train.y_test)
     print("Test accuracy:", score)
     print("Test AUC score:", roc_auc_score(train.y_test, y_pred))
     print(classification_report(list(train.test_df.label), y_pred_decoded))
