@@ -1,4 +1,4 @@
-# Challenge
+# Article Classifier
 Train a binary classifier on given 7494 academic article titles and/or abstracts to predict if the text belongs to `Material Science` or `Chemistry` category and evalute the best performing model's F-1, accurracy and AUC scores.
 
 ### Data
